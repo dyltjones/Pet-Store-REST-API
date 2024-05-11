@@ -40,7 +40,8 @@ public class PetStore {
 	@OneToMany(mappedBy = "petStore", cascade = CascadeType.ALL,
 			orphanRemoval = true)
 	private Set<Employee> employees = new HashSet<>();
-
+	
+	//creates the pet_store_customer table with pet_store_Id customer_id
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(cascade = CascadeType.PERSIST)
