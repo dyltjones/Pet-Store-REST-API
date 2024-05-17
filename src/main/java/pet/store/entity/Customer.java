@@ -13,7 +13,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-//customer of the pet store
+//customer of the pet store many to many to PetStore
 @Entity
 @Data
 public class Customer {
@@ -29,7 +29,6 @@ public class Customer {
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(mappedBy = "customers", cascade = CascadeType.PERSIST)
-
 	private Set<PetStore> petStores = new HashSet<>();
 
 }
